@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "/Users/oreotamish/Desktop/Coding/table-org/protoc";
+
+message TableRequest{
+    string dbName = 1;
+    string collectionName = 2;
+}
+
+message DataResponse {
+    repeated bytes dataBytes = 1;
+}
+
+service FetchData {
+    rpc DataWrangler (TableRequest) returns (DataResponse);
+}
